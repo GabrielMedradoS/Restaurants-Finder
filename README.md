@@ -3,6 +3,7 @@
   <img src="./" alt="" width="100%">
   
 ### 💻 Projeto
+Encontre um restaurante perto da sua casa
 
 ### 🛠 Tecnologias
 
