@@ -1,4 +1,4 @@
-## Narutinho
+## Restaurants Finder
 
   <img src="./" alt="" width="100%">
   
