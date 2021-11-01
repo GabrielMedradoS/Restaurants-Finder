@@ -16,6 +16,8 @@ import MaterialIcon from "@material/react-material-icon";
 import Slider from "react-slick";
 import { ImageCard } from "../components/ImageCard";
 
+import { RestaurantCard } from "../components/RestaurantsCards";
+
 export function Home() {
   const [inputValue, setInputValue] = useState("");
 
@@ -51,6 +53,7 @@ export function Home() {
             <ImageCard photo={restaurante} title="restaurante" />
           </Slider>
         </Search>
+        <RestaurantCard />
       </Container>
       <Map />
     </Wrapper>
