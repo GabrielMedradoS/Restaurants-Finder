@@ -18,8 +18,11 @@ import { ImageCard } from "../components/ImageCard";
 
 import { RestaurantCard } from "../components/RestaurantsCards";
 
+import { Modal } from "../components/Modal";
+
 export function Home() {
   const [inputValue, setInputValue] = useState("");
+  const [modalOpened, setmodalOpened] = useState(false);
 
   const settings = {
     dots: false,
@@ -52,10 +55,12 @@ export function Home() {
             <ImageCard photo={restaurante} title="restaurante" />
             <ImageCard photo={restaurante} title="restaurante" />
           </Slider>
+          <button onClick={() => setmodalOpened(true)}>Abrir Modal</button>
         </Search>
         <RestaurantCard />
       </Container>
       <Map />
+      <Modal open={modalOpened} onClose={() => setmodalOpened(!modalOpened)} />
     </Wrapper>
   );
 }
