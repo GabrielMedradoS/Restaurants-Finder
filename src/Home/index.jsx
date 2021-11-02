@@ -22,11 +22,13 @@ import { RestaurantCard } from "../components/RestaurantsCards";
 import { Map } from "../components";
 
 import { Modal } from "../components/Modal";
+import { useSelector } from "react-redux";
 
 export function Home() {
   const [inputValue, setInputValue] = useState("");
   const [query, setQuery] = useState(null);
-  const [modalOpened, setmodalOpened] = useState(false);
+  const [modalOpened, setmodalOpened] = useState(true);
+  const { restaurants } = useSelector((state) => state.restaurants);
 
   const settings = {
     dots: false,
@@ -61,14 +63,22 @@ export function Home() {
           </TextField>
           <CarrouselTitle>Na sua Área</CarrouselTitle>
           <Slider {...settings}>
-            <ImageCard photo={restaurante} title="restaurante" />
-            <ImageCard photo={restaurante} title="restaurante" />
-            <ImageCard photo={restaurante} title="restaurante" />
-            <ImageCard photo={restaurante} title="restaurante" />
+            {restaurants.map((restaurant) => (
+              <ImageCard
+                key={restaurant.place_id}
+                photo={
+                  restaurant.photos
+                    ? restaurant.photos[0].getUrl()
+                    : restaurante
+                }
+                title={restaurant.name}
+              />
+            ))}
           </Slider>
-          <button onClick={() => setmodalOpened(true)}>Abrir Modal</button>
         </Search>
-        <RestaurantCard />
+        {restaurants.map((restaurant) => (
+          <RestaurantCard restaurant={restaurant} />
+        ))}
       </Container>
       <Map query={query} />
       <Modal open={modalOpened} onClose={() => setmodalOpened(!modalOpened)} />
