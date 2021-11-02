@@ -3,7 +3,7 @@
   <img src="./" alt="" width="100%">
   
 ### 💻 Projeto
-Encontre um restaurante perto da sua casa
+Encontre um restaurante perto da sua casa com o uso do google maps e places API
 
 ### 🛠 Tecnologias
 
@@ -18,6 +18,7 @@ https://www.npmjs.com/package/@material/react-material-icon
 https://www.npmjs.com/package/@material/react-text-field
 https://www.npmjs.com/package/react-slick
 https://www.npmjs.com/package/react-rating-stars-component
+https://www.npmjs.com/package/google-maps-react
 
 ### ✍🏾 Autor
 

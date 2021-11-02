@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+
 import {
   Container,
   Logo,
   Search,
   Wrapper,
-  Map,
+  /* Map, */
   CarrouselTitle,
 } from "./styles";
 import logo from "../assets/logo.svg";
@@ -18,10 +19,13 @@ import { ImageCard } from "../components/ImageCard";
 
 import { RestaurantCard } from "../components/RestaurantsCards";
 
+import { Map } from "../components";
+
 import { Modal } from "../components/Modal";
 
 export function Home() {
   const [inputValue, setInputValue] = useState("");
+  const [query, setQuery] = useState(null);
   const [modalOpened, setmodalOpened] = useState(false);
 
   const settings = {
@@ -32,6 +36,12 @@ export function Home() {
     slidesToScroll: 4,
     adaptiveHeight: true,
   };
+
+  function handleKeyPress(e) {
+    if (e.codeKey === "Enter") {
+      setQuery(inputValue);
+    }
+  }
 
   return (
     <Wrapper>
@@ -45,6 +55,7 @@ export function Home() {
           >
             <Input
               value={inputValue}
+              onKeyPress={handleKeyPress}
               onChange={(e) => setInputValue(e.target.value)}
             />
           </TextField>
@@ -59,7 +70,7 @@ export function Home() {
         </Search>
         <RestaurantCard />
       </Container>
-      <Map />
+      <Map query={query} />
       <Modal open={modalOpened} onClose={() => setmodalOpened(!modalOpened)} />
     </Wrapper>
   );
