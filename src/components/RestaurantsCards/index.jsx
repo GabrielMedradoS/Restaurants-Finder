@@ -10,8 +10,8 @@ import {
 
 import restaurante from "../../assets/restaurante-fake.png";
 
-export const RestaurantCard = ({ restaurant }) => (
-  <Restaurant>
+export const RestaurantCard = ({ restaurant, onClick }) => (
+  <Restaurant onClick={onClick}>
     <RestaurantInfo>
       <Title>{restaurant.name}</Title>
       <ReactStars
