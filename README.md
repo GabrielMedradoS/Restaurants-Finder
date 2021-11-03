@@ -1,6 +1,6 @@
 ## Restaurants Finder
 
-  <img src="./" alt="" width="100%">
+  <img src="./github/Restaurant-Finder.png" alt="Restaurant-Finder" width="100%">
   
 ### 💻 Projeto
 Encontre um restaurante perto da sua casa com o uso do google maps e places API
@@ -19,6 +19,9 @@ https://www.npmjs.com/package/@material/react-text-field
 https://www.npmjs.com/package/react-slick
 https://www.npmjs.com/package/react-rating-stars-component
 https://www.npmjs.com/package/google-maps-react
+
+https://www.npmjs.com/package/react-lottie
+https://lottiefiles.com/
 
 ### ✍🏾 Autor
 

@@ -20,7 +20,7 @@ import { ImageCard } from "../components/ImageCard";
 
 import { RestaurantCard } from "../components/RestaurantsCards";
 
-import { Map } from "../components";
+import { Map, Loader, Skeleton } from "../components";
 
 import { Modal } from "../components/Modal";
 import { useSelector } from "react-redux";
@@ -29,7 +29,7 @@ export function Home() {
   const [inputValue, setInputValue] = useState("");
   const [query, setQuery] = useState(null);
   const [placeId, setPlaceId] = useState(null);
-  const [modalOpened, setmodalOpened] = useState(true);
+  const [modalOpened, setmodalOpened] = useState(false);
   const { restaurants, restaurantSelected } = useSelector(
     (state) => state.restaurants
   );
@@ -71,21 +71,28 @@ export function Home() {
               onChange={(e) => setInputValue(e.target.value)}
             />
           </TextField>
-          <CarrouselTitle>Na sua Área</CarrouselTitle>
-          <Slider {...settings}>
-            {restaurants.map((restaurant) => (
-              <ImageCard
-                key={restaurant.place_id}
-                photo={
-                  restaurant.photos
-                    ? restaurant.photos[0].getUrl()
-                    : restaurante
-                }
-                title={restaurant.name}
-              />
-            ))}
-          </Slider>
+          {restaurants.length > 0 ? (
+            <>
+              <CarrouselTitle>Na sua Área</CarrouselTitle>
+              <Slider {...settings}>
+                {restaurants.map((restaurant) => (
+                  <ImageCard
+                    key={restaurant.place_id}
+                    photo={
+                      restaurant.photos
+                        ? restaurant.photos[0].getUrl()
+                        : restaurante
+                    }
+                    title={restaurant.name}
+                  />
+                ))}
+              </Slider>
+            </>
+          ) : (
+            <Loader />
+          )}
         </Search>
+
         {restaurants.map((restaurant) => (
           <RestaurantCard
             onClick={() => handleOpenModal(restaurant.place_id)}
@@ -94,15 +101,29 @@ export function Home() {
         ))}
       </Container>
       <Map query={query} placeId={placeId} />
+
       <Modal open={modalOpened} onClose={() => setmodalOpened(!modalOpened)}>
-        <ModalTitle>{restaurantSelected?.name}</ModalTitle>
-        <ModalContent>
-          {restaurantSelected?.formatted_phone_number}
-        </ModalContent>
-        <ModalContent>{restaurantSelected?.formatted_address}</ModalContent>
-        <ModalContent>
-          {restaurantSelected?.open_hours ? "Aberto agora" : "Estamos fechados"}
-        </ModalContent>
+        {restaurantSelected ? (
+          <>
+            <ModalTitle>{restaurantSelected?.name}</ModalTitle>
+            <ModalContent>
+              {restaurantSelected?.formatted_phone_number}
+            </ModalContent>
+            <ModalContent>{restaurantSelected?.formatted_address}</ModalContent>
+            <ModalContent>
+              {restaurantSelected?.open_hours
+                ? "Aberto agora"
+                : "Estamos fechados"}
+            </ModalContent>
+          </>
+        ) : (
+          <>
+            <Skeleton width="10px" height="10px" />
+            <Skeleton width="10px" height="10px" />
+            <Skeleton width="10px" height="10px" />
+            <Skeleton width="10px" height="10px" />
+          </>
+        )}
       </Modal>
     </Wrapper>
   );

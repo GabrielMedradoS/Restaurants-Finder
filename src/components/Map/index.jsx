@@ -14,16 +14,19 @@ export const MapContainer = (props) => {
     if (query) {
       searchByQuery(query);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [query]);
 
   useEffect(() => {
     if (placeId) {
       getRestaurantById(placeId);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [placeId]);
 
   function getRestaurantById(placeId) {
     const service = new google.maps.places.PlacesService(map);
+    dispatch(setRestaurant(null));
 
     const request = {
       placeId,
@@ -44,6 +47,7 @@ export const MapContainer = (props) => {
 
   function searchByQuery(query) {
     const service = new google.maps.places.PlacesService(map);
+    dispatch(setRestaurants([]));
 
     const request = {
       location: map.center,
@@ -61,6 +65,7 @@ export const MapContainer = (props) => {
 
   function searchNearby(map, center) {
     const service = new google.maps.places.PlacesService(map);
+    dispatch(setRestaurants([]));
 
     const request = {
       location: center,
