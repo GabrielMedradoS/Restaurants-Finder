@@ -14,14 +14,14 @@ Encontre um restaurante perto da sua casa com o uso do google maps e places API
    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" height="30" width="40"/>
 </div>
 
-https://www.npmjs.com/package/@material/react-material-icon
-https://www.npmjs.com/package/@material/react-text-field
-https://www.npmjs.com/package/react-slick
-https://www.npmjs.com/package/react-rating-stars-component
-https://www.npmjs.com/package/google-maps-react
+- https://www.npmjs.com/package/@material/react-material-icon
+- https://www.npmjs.com/package/@material/react-text-field
+- https://www.npmjs.com/package/react-slick
+- https://www.npmjs.com/package/react-rating-stars-component
+- https://www.npmjs.com/package/google-maps-react
 
-https://www.npmjs.com/package/react-lottie
-https://lottiefiles.com/
+- https://www.npmjs.com/package/react-lottie
+- https://lottiefiles.com/
 
 ### ✍🏾 Autor
 
