@@ -4,7 +4,7 @@
 </h1>
 
 <p align="center">
-    <img alt="Platform" src="https://img.shields.io/static/v1?label=Platform&message=Mobile/PC&color=blue&labelColor=white">
+    <img alt="Platform" src="https://img.shields.io/static/v1?label=Platform&message=PC&color=blue&labelColor=white">
     <a href="">
         <img src="https://img.shields.io/badge/finder-DIO-blue?&labelColor=white"></img>
     </a>
