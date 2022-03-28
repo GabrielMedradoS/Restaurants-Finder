@@ -1,7 +1,19 @@
 ## Restaurants Finder
 <h1 align="center">
-    <img src="./src/assets/logo.svg" width="300" heigh="80" alt="logo happy">
+    <img src="./src/assets/logo.svg" width="300" heigh="80" alt="logo Restaurants Finder">
 </h1>
+
+<p align="center">
+    <img alt="Platform" src="https://img.shields.io/static/v1?label=Platform&message=Mobile/PC&color=blue&labelColor=white">
+    <a href="">
+        <img src="https://img.shields.io/badge/finder-DIO-blue?&labelColor=white"></img>
+    </a>
+    <img alt="Repository size" src="https://img.shields.io/github/repo-size/GabrielMedradoS/Restaurants-Finder?color=blue&labelColor=white">
+    <a href="https://github.com/GabrielMedradoS/Restaurants-Finder/blob/master/License">
+        <img alt="License" src="https://img.shields.io/static/v1?label=License&message=MIT&color=blue&labelColor=white">
+    </a>
+</p>
+
 <p align="center">
     <a href="#projeto-">Projeto</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
     <a href="#tecnologias-">Tecnologias</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
